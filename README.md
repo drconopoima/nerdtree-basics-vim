@@ -40,7 +40,9 @@ Or using wget:
 * Git
 * Vim 7.3 or greater. Vim 8.0 or greater.
 
-The installer will backup any existing Vim configuration to `~/.vim_backup` and install Nerdtree Basics Vim into folder: `~/.vim_nerdtree_basics` and creating links for `~/.vimrc`, for file `pathogen.vim` at `~/.vim/autobundles/` and for the plugins folder at `~/.vim/bundles/`.
+The installer will backup any existing Vim configuration to `~/.vim_backup` and install Nerdtree Basics Vim into folder: `~/.vim_nerdtree_basics` and creating links for `~/.vimrc`, for file `pathogen.vim` at `~/.vim/autobundles/` and for individual plugins folders at `~/.vim/bundles/`.
+
+You can install future plugins and customize your installation by cloning plugin repositories into `~/.vim/bundle`.
 
 Behind-the-scenes the installer is simply recursively shallow cloning the repositories for each of the plugins, so as to be efficient in disk space. The update script is additionally updating in parallel all shallow clones in-place and to the latest commit in the master branch, so it is as quick as it can possibly be.
 

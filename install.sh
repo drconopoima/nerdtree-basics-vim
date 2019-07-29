@@ -162,10 +162,15 @@ install_vim () {
     else
       mv "$HOME/.vim" "$HOME/.vim_backup"
       success "BackUp $HOME/.vim to $HOME/.vim_backup"
-      rm -rf $HOME/.vim
-      mkdir -p ~/.vim/autoload/
+      rm -rf "$HOME/.vim"
+      mkdir -p "$HOME/.vim/autoload/"
+      mkdir "$HOME/.vim/bundle"
       ln -s "$HOME/.vim_nerdtree_basics/vim/autoload/vim-pathogen/autoload/pathogen.vim" "$HOME/.vim/autoload/"
-      ln -s "$HOME/.vim_nerdtree_basics/vim/bundle" "$HOME/.vim/"
+      ln -s "$HOME/.vim_nerdtree_basics/vim/bundle/ctrlp.vim" "$HOME/.vim/bundle"
+      ln -s "$HOME/.vim_nerdtree_basics/vim/bundle/nerdtree" "$HOME/.vim/bundle"
+      ln -s "$HOME/.vim_nerdtree_basics/vim/bundle/nerdtree-git-plugin" "$HOME/.vim/bundle"
+      ln -s "$HOME/.vim_nerdtree_basics/vim/bundle/syntastic" "$HOME/.vim/bundle"
+      ln -s "$HOME/.vim_nerdtree_basics/vim/bundle/vim-polyglot" "$HOME/.vim/bundle"
       if [[ -f "$HOME/.vimrc" ]]; then
         mv "$HOME/.vimrc" "$HOME/.vimrc_backup"
         success "Backup $HOME/.vimrc to $HOME/.vimrc_backup"
@@ -175,9 +180,13 @@ install_vim () {
     fi
   else
     mkdir -p ~/.vim/autoload/
+    mkdir "$HOME/.vim/bundle"
     ln -s "$HOME/.vim_nerdtree_basics/vim/autoload/vim-pathogen/autoload/pathogen.vim" "$HOME/.vim/autoload/"
-    ln -s "$HOME/.vim_nerdtree_basics/vim/bundle" "$HOME/.vim/"
-    ln -s "$HOME/.vim_nerdtree_basics/vimrc" "$HOME/.vimrc"
+    ln -s "$HOME/.vim_nerdtree_basics/vim/bundle/ctrlp.vim" "$HOME/.vim/bundle"
+    ln -s "$HOME/.vim_nerdtree_basics/vim/bundle/nerdtree" "$HOME/.vim/bundle"
+    ln -s "$HOME/.vim_nerdtree_basics/vim/bundle/nerdtree-git-plugin" "$HOME/.vim/bundle"
+    ln -s "$HOME/.vim_nerdtree_basics/vim/bundle/syntastic" "$HOME/.vim/bundle"
+    ln -s "$HOME/.vim_nerdtree_basics/vim/bundle/vim-polyglot" "$HOME/.vim/bundle"
     success "Installed Nerdtree-basics-vim"
   fi
 }
