@@ -187,6 +187,7 @@ install_vim () {
     ln -s "$HOME/.vim_nerdtree_basics/vim/bundle/nerdtree-git-plugin" "$HOME/.vim/bundle"
     ln -s "$HOME/.vim_nerdtree_basics/vim/bundle/syntastic" "$HOME/.vim/bundle"
     ln -s "$HOME/.vim_nerdtree_basics/vim/bundle/vim-polyglot" "$HOME/.vim/bundle"
+    ln -s "$HOME/.vim_nerdtree_basics/vimrc" "$HOME/.vimrc"
     success "Installed Nerdtree-basics-vim"
   fi
 }
