@@ -85,15 +85,6 @@ Version='0.9.0'
 
 # }}}
 
-# need_cmd {{{
-need_cmd () {
-  if ! hash "$1" &>/dev/null; then
-    error "Need '$1' (command not found)"
-    exit 1
-  fi
-}
-# }}}
-
 # success/info/error/warn {{{
 msg() {
   printf '%b\n' "$1" >&2
@@ -229,7 +220,6 @@ main () {
   then
     case $1 in
       --install|-i)
-        need_cmd 'git'
         fetch_repo
         if [ $# -eq 2 ]
         then
@@ -244,7 +234,6 @@ main () {
         exit 0
     esac
   else
-    need_cmd 'git'
     fetch_repo
     install_vim
   fi
@@ -253,4 +242,3 @@ main () {
 # }}}
 
 main $@
-
