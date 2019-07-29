@@ -143,6 +143,34 @@ fetch_repo () {
 	clean -q -dfx) & (cd ~/.vim_nerdtree_basics/vim/bundle/vim-polyglot/ \
 	&& git fetch -q --depth=1 && git reset -q --hard origin/master && git \
 	clean -q -dfx) & wait
+    if ! [[ "$(readlink $HOME/.vim/bundle/ctrlp.vim)" =~ \
+	    \.vim_nerdtree_basics/vim/bundle/ctrlp.vim$ ]]; then
+        ln -s "$HOME/.vim_nerdtree_basics/vim/bundle/ctrlp.vim" "$HOME/.vim/bundle"
+    fi
+    if ! [[ "$(readlink $HOME/.vim/autoload/pathogen.vim)" =~ \
+	    \.vim_nerdtree_basics/vim/autoload/vim-pathogen/autoload/pathogen.vim$ ]]; then
+	ln -s \
+	"$HOME/.vim_nerdtree_basics/vim/autoload/vim-pathogen/autoload/pathogen.vim" "$HOME/.vim/autoload/"
+    fi
+    if ! [[ "$(readlink $HOME/.vim/bundle/nerdtree)" =~ \
+	    \.vim_nerdtree_basics/vim/bundle/nerdtree$ ]]; then
+        ln -s "$HOME/.vim_nerdtree_basics/vim/bundle/nerdtree" "$HOME/.vim/bundle"
+    fi
+    if ! [[ "$(readlink $HOME/.vim/bundle/nerdtree-git-plugin)" =~ \
+	    \.vim_nerdtree_basics/vim/bundle/nerdtree-git-plugin$ ]]; then
+        ln -s "$HOME/.vim_nerdtree_basics/vim/bundle/nerdtree-git-plugin" "$HOME/.vim/bundle"
+    fi
+    if ! [[ "$(readlink $HOME/.vim/bundle/syntastic)" =~ \
+	    \.vim_nerdtree_basics/vim/bundle/syntastic$ ]]; then
+        ln -s "$HOME/.vim_nerdtree_basics/vim/bundle/syntastic" "$HOME/.vim/bundle"
+    fi
+    if ! [[ "$(readlink $HOME/.vim/bundle/vim-polyglot)" =~ \
+	    \.vim_nerdtree_basics/vim/bundle/vim-polyglot$ ]]; then
+        ln -s "$HOME/.vim_nerdtree_basics/vim/bundle/vim-polyglot" "$HOME/.vim/bundle"
+    fi
+    if ! [[ -f "$HOME/.vimrc" ]]; then
+        ln -s "$HOME/.vim_nerdtree_basics/vimrc" "$HOME/.vimrc"
+    fi
     success "Successfully updated Nerdtree-basics-vim"
   else
     info "Trying to clone Nerdtree-basics-vim"
