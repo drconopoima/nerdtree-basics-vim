@@ -27,12 +27,12 @@ To install Nerdtree basics vim, you would need to execute the `install.sh` shell
 Using curl:
 
 ```sh
-    curl -o- https://raw.githubusercontent.com/drconopoima/nerdtree-basics-vim/master/install.sh | sh
+    curl -o- https://raw.githubusercontent.com/drconopoima/nerdtree-basics-vim/master/install.sh | bash
 ```
 
 Or using wget:
 ```sh
-    wget -qO- https://raw.githubusercontent.com/drconopoima/nerdtree-basics-vim/master/install.sh | sh
+    wget -qO- https://raw.githubusercontent.com/drconopoima/nerdtree-basics-vim/master/install.sh | bash
 ```
 
 ## Requirements:
@@ -54,12 +54,12 @@ You may prefer to use the standalone update script to update your installation:
 
 Curl:
 ```sh
-    curl -o- https://raw.githubusercontent.com/drconopoima/nerdtree-basics-vim/master/update-nerdtree-basics-vim.sh | sh
+    curl -o- https://raw.githubusercontent.com/drconopoima/nerdtree-basics-vim/master/update-nerdtree-basics-vim.sh | bash
 ```
 
 Wget:
 ```sh
-    wget -qO- https://raw.githubusercontent.com/drconopoima/nerdtree-basics-vim/master/update-nerdtree-basics-vim.sh | sh
+    wget -qO- https://raw.githubusercontent.com/drconopoima/nerdtree-basics-vim/master/update-nerdtree-basics-vim.sh | bash
 ```
 
 # Uninstall
@@ -68,12 +68,12 @@ To uninstall, you have available an uninstall script at the repository root:
 
 Curl:
 ```sh
-    curl -o- https://raw.githubusercontent.com/drconopoima/nerdtree-basics-vim/master/uninstall.sh | sh
+    curl -o- https://raw.githubusercontent.com/drconopoima/nerdtree-basics-vim/master/uninstall.sh | bash
 ```
 
 Wget:
 ```sh
-    wget -qO- https://raw.githubusercontent.com/drconopoima/nerdtree-basics-vim/master/uninstall.sh | sh
+    wget -qO- https://raw.githubusercontent.com/drconopoima/nerdtree-basics-vim/master/uninstall.sh | bash
 ```
 
 # Credits
