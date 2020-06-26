@@ -7,21 +7,12 @@ set hidden " Hide buffers when they are abandoned
 " set mouse=a 
 set nocompatible              " be iMproved, required
 filetype off                  " required
-execute pathogen#infect()
-" Turn on syntax highlighting.
-syntax on
-filetype plugin indent on
-" Automatically wrap text that extends beyond the screen length.
-set wrap
-" Vim's auto indentation feature does not work properly with text copied from outisde of Vim. Press the <F2> key to toggle paste mode on/off.
-nnoremap <F2> :set invpaste paste?<CR>
-imap <F2> <C-O>:set invpaste paste?<CR>
-set pastetoggle=<F2>
-" Uncomment below to set the max textwidth. Use a value corresponding to the width of your screen.
-set textwidth=79
 set number
+set relativenumber
+" Uncomment below to set the max textwidth. Use a value corresponding to the width of your screen.
+set textwidth=119
 set ignorecase
-set smartcase " ...except when serach query contains a capital letter
+set smartcase " ...except when search query contains a capital letter
 set autoread        " Auto load files if they change on disc
 " Display 5 lines above/below the cursor when scrolling with a mouse.
 set scrolloff=7
@@ -44,9 +35,19 @@ set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ [BUFFE
 set encoding=utf-8
 " Highlight matching search patterns
 set hlsearch
-set showcmd
 " Store info from no more than 100 files at a time, 9999 lines of text, 100kb of data. Useful for copying large amounts of data between files.
 set viminfo='100,<9999,s100
+
+execute pathogen#infect()
+" Turn on syntax highlighting.
+syntax on
+filetype plugin indent on
+" Automatically wrap text that extends beyond the screen length.
+set wrap
+" Vim's auto indentation feature does not work properly with text copied from outisde of Vim. Press the <F2> key to toggle paste mode on/off.
+nnoremap <F2> :set invpaste paste?<CR>
+imap <F2> <C-O>:set invpaste paste?<CR>
+set pastetoggle=<F2>
 " Map the <Space> key to toggle a selected fold opened/closed.
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
@@ -76,9 +77,9 @@ autocmd BufWinEnter *.* silent loadview"
 
 
     " }}}1
-autocmd StdinReadPre * let s:std_in=1
+nmap <C-f> :NERDTreeToggle<CR>
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 set statusline+=%#warningmsg#
